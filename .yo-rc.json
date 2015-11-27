@@ -1,0 +1,13 @@
+{
+  "generator-kraken": {
+    "taskModule": "grunt",
+    "description": "Property Management System",
+    "author": "@lennyMarkus",
+    "templateModule": "makara",
+    "i18n": "i18n",
+    "componentPackager": false,
+    "cssModule": "sass",
+    "jsModule": "browserify",
+    "useJson": null
+  }
+}

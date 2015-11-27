@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb",
+
+    //Most AirBnB defaults are sane, but there are a few choices that I disagree with...
+    "rules": {
+        "comma-dangle": [2, "never"],
+        "func-names":0,
+        "indent": [2, 4],
+        "one-var": [2, "always"],
+        "padded-blocks":0,
+        "space-before-function-paren": [2, { "anonymous": "always", "named": "never" }],
+        "strict": [ 2, "global" ]
+    }
+}
