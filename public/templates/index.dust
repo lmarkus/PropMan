@@ -1,5 +1,5 @@
 {>"layouts/master" /}
 
 {<body}
-Hello
+Hello {name}
 {/body}

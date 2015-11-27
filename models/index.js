@@ -1,5 +1,5 @@
-module.exports = function IndexModel() {
+export default function IndexModel() {
     return {
         name: 'index'
     };
-};
+}

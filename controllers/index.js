@@ -1,4 +1,4 @@
-const IndexModel = require('../models/index');
+import IndexModel from '../models/index';
 
 module.exports = function MainRouter(router) {
     const model = new IndexModel();

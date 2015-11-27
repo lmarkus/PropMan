@@ -1,10 +1,8 @@
-'use strict';
+import Logger from './lib/Logger';
+import express from 'express';
+import kraken from 'kraken-js';
 
-var express = require('express');
-var kraken = require('kraken-js');
-
-
-var options, app;
+let options, app;
 
 /*
  * Create and configure application. Also exports application instance for use by tests.
@@ -16,13 +14,16 @@ options = {
          * Add any additional config setup or overrides here. `config` is an initialized
          * `confit` (https://github.com/krakenjs/confit/) configuration object.
          */
+        Logger.config(config.get('logger'));
         next(null, config);
     }
 };
 
-app = module.exports = express();
+app = express();
 app.use(kraken(options));
 app.on('start', function () {
-    console.log('Application ready to serve requests.');
-    console.log('Environment: %s', app.kraken.get('env:env'));
+    Logger.info('Application ready to serve requests.');
+    Logger.info(`Environment: ${app.kraken.get('env:env')}`);
 });
+
+export default app;

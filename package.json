@@ -18,7 +18,8 @@
     "dust-makara-helpers": "^4.1.2",
     "express": "^4.12.2",
     "kraken-js": "^2.0.0",
-    "makara": "^2.0.3"
+    "makara": "^2.0.3",
+    "winston": "^2.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",

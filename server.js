@@ -1,17 +1,13 @@
-'use strict';
-
-var app = require('./index');
-var http = require('http');
-
-
-var server;
+/* eslint no-console:0 */
+import app from './index';
+import http from'http';
 
 /*
  * Create and start HTTP server.
  */
 
-server = http.createServer(app);
+const server = http.createServer(app);
 server.listen(process.env.PORT || 8000);
 server.on('listening', function () {
-    console.log('Server listening on http://localhost:%d', this.address().port);
+    console.log(`Server listening on http://localhost:${this.address().port}`);
 });

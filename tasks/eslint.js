@@ -10,7 +10,9 @@ module.exports = function jshint(grunt) {
         target: [
             'controllers/**/*.js',
             'lib/**/*.js',
-            'models/**/*.js'
+            'models/**/*.js',
+            'index.js',
+            'server.js'
         ],
         options: {
             eslintrc: '.eslintrc'
