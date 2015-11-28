@@ -1,4 +1,5 @@
 import Logger from './lib/Logger';
+import {singleton as db} from './lib/Database';
 import express from 'express';
 import kraken from 'kraken-js';
 
@@ -10,11 +11,10 @@ let options, app;
  */
 options = {
     onconfig: function (config, next) {
-        /*
-         * Add any additional config setup or overrides here. `config` is an initialized
-         * `confit` (https://github.com/krakenjs/confit/) configuration object.
-         */
+
         Logger.config(config.get('logger'));
+        db.config(config.get('db'));
+
         next(null, config);
     }
 };

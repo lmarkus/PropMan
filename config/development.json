@@ -57,5 +57,15 @@
                 "conf": {}
             }
         ]
+    },
+    "db": {
+        "database": "propman",
+        "username": "propman",
+        "password": "test123",
+        "options": {
+            "dialect": "mysql",
+            "host": "localhost",
+            "port": 3306
+        }
     }
 }
