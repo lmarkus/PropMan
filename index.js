@@ -22,7 +22,7 @@ options = {
 app = express();
 app.use(kraken(options));
 app.on('start', function () {
-    Logger.info('Application ready to serve requests.');
+    Logger.info('Application ready to serve requests...');
     Logger.info(`Environment: ${app.kraken.get('env:env')}`);
 });
 
