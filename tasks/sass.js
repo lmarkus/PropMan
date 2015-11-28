@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = function sass(grunt) {
     // Load task
     grunt.loadNpmTasks('grunt-sass');

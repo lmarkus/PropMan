@@ -3,10 +3,11 @@
  */
 /* global describe:false, it:false, beforeEach:false, afterEach:false */
 /* eslint no-unused-vars:0 prefer-const:0*/
-import sinon from 'sinon';
-import {assert} from 'chai';
-import winston from 'winston';
-import Logger from '../../../lib/Logger';
+'use strict';
+const sinon = require('sinon'),
+    assert = require('chai').assert,
+    winston = require('winston'),
+    Logger = require('../../../lib/Logger');
 
 describe('Logger', ()=> {
     let sandbox = sinon.sandbox.create();

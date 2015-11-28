@@ -8,6 +8,11 @@
         "indent": [2, 4],
         "one-var": [2, "always"],
         "padded-blocks":0,
-        "space-before-function-paren": [2, { "anonymous": "always", "named": "never" }]
+        "space-before-function-paren": [2, { "anonymous": "always", "named": "never" }],
+        "strict":[2, "global"]
+    },
+
+    "ecmaFeatures":{
+        "modules":false //sigh... not yet.
     }
 }

@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function mocha_istanbul(grunt) {
     // Load task
     grunt.loadNpmTasks('grunt-mocha-istanbul');
@@ -6,7 +7,6 @@ module.exports = function mocha_istanbul(grunt) {
         coverageUnit: {
             src: 'test/unit/**/*.js',
             options: {
-                mochaOptions: ['--compilers', 'js:babel-core/register'] // any extra options
             }
         }
     };

@@ -1,5 +1,6 @@
 /* global describe:false, it:false, beforeEach:false, afterEach:false */
 /* eslint no-unused-vars:0 */
+'use strict';
 const kraken = require('kraken-js'),
     express = require('express'),
     path = require('path'),

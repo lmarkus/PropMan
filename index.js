@@ -1,7 +1,8 @@
-import Logger from './lib/Logger';
-import {singleton as db} from './lib/Database';
-import express from 'express';
-import kraken from 'kraken-js';
+'use strict';
+const Logger = require('./lib/Logger'),
+    db = require('./lib/Database').singleton,
+    express = require('express'),
+    kraken = require('kraken-js');
 
 let options, app;
 
@@ -26,4 +27,4 @@ app.on('start', function () {
     Logger.info(`Environment: ${app.kraken.get('env:env')}`);
 });
 
-export default app;
+module.exports = app;

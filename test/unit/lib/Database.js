@@ -3,9 +3,10 @@
  */
 /* global describe:false, it:false, beforeEach:false, afterEach:false */
 /* eslint no-unused-vars:0 prefer-const:0*/
-import {assert} from 'chai';
-import Database from '../../../lib/Database';
-import Logger from '../../../lib/Logger';
+'use strict';
+const assert = require('chai').assert,
+    Database = require('../../../lib/Database'),
+    Logger = require('../../../lib/Logger');
 
 
 describe('Database', () => {
