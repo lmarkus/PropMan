@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function (grunt) {
 
     // Load the project's grunt tasks from a directory
@@ -9,8 +10,9 @@ module.exports = function (grunt) {
 
 
     // Register group tasks
-    grunt.registerTask('build', ['lint', 'dustjs', 'makara-browserify', 'sass', 'browserify', 'copyto']);
-    grunt.registerTask('test', ['lint', 'mochacli']);
     grunt.registerTask('lint', ['eslint']);
+    grunt.registerTask('test', ['lint', 'mochacli']);
+    grunt.registerTask('coverage', ['lint', 'mocha_istanbul']);
+    grunt.registerTask('build', ['lint', 'dustjs', 'makara-browserify', 'sass', 'browserify', 'copyto']);
 
 };
