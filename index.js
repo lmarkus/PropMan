@@ -1,27 +1,14 @@
 'use strict';
-const Logger = require('./lib/Logger'),
-    db = require('./lib/Database').singleton,
+const
     express = require('express'),
-    kraken = require('kraken-js');
+    kraken = require('kraken-js'),
+    Logger = require('./lib/Logger'),
+    initOptions = require('./lib/initOptions');
 
-let options, app;
-
-/*
- * Create and configure application. Also exports application instance for use by tests.
- * See https://github.com/krakenjs/kraken-js#options for additional configuration options.
- */
-options = {
-    onconfig: function (config, next) {
-
-        Logger.config(config.get('logger'));
-        db.config(config.get('db'));
-
-        next(null, config);
-    }
-};
+let app;
 
 app = express();
-app.use(kraken(options));
+app.use(kraken(initOptions));
 app.on('start', function () {
     Logger.info('Application ready to serve requests...');
     Logger.info(`Environment: ${app.kraken.get('env:env')}`);

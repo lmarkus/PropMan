@@ -24,5 +24,9 @@ describe('Database', () => {
                 let instance = db.instance;
             }, 'Instance has been initialized');
         });
+
+        it('Syncs tables', ()=> {
+
+        })
     });
 });
