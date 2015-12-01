@@ -28,7 +28,7 @@ _User.afterValidate((user /* , options*/)=> {
 });
 
 roles = {
-    ADMIN: 'ADMIN1',
+    ADMIN: 'ADMIN',
     TENANT: 'TENANT',
     LANDLORD: 'LANDLORD'
 };

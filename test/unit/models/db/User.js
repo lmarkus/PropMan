@@ -53,4 +53,7 @@ describe('User Model', ()=> {
                 });
         });
     });
+
+    it.skip('Does not allow duplicate logins');
+
 });
