@@ -1,0 +1,3 @@
+{
+    "db": "require:./config/db/test.json"
+}
