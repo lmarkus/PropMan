@@ -8,18 +8,6 @@ const assert = require('chai').assert,
     password = require('../../../../lib/util/password');
 
 describe('Password Utility', ()=> {
-    describe('Password Validation', ()=> {
-        it('Rejects an undefined password', ()=> {
-            assert.notOk(password.validate());
-        });
-        it('Rejects an empty password', ()=> {
-            assert.notOk(password.validate(''));
-        });
-        it('Accepts any other password ', ()=> {
-            assert.ok(password.validate('foo'));
-        });
-    });
-
     describe('Encryption', () => {
         it('Encrypts a password', () => {
             const SECRET = 'foo',

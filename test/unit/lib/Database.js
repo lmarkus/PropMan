@@ -13,20 +13,29 @@ describe('Database', () => {
     describe('#wrapper', () => {
         it('Throws if used before initialization', ()=> {
             assert.throws(()=> {
-                const instance = (new Database()).instance;
+                const instance = Database.instance;
             }, 'Instance has not been initialized yet');
+        });
+
+        it('Can manually set an instance using settter', ()=> {
+            Database.instance = {foo: true};
+            assert.isOk(Database.instance.foo, '_instance Setter works');
         });
 
         it('Does not throw after initialization', ()=> {
             assert.doesNotThrow(()=> {
-                const db = new Database();
-                db.config(require('../../../config/development.json').db);
-                let instance = db.instance;
+
+                Database.config(require('../../../config/development.json').db);
+                let instance = Database.instance;
             }, 'Instance has been initialized');
         });
 
         it('Syncs tables', ()=> {
 
-        })
+        });
+
+        it('Returns models', ()=> {
+            assert.isObject(Database.models, 'Models have been loaded');
+        });
     });
 });

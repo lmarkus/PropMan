@@ -6,21 +6,19 @@
 'use strict';
 const sinon = require('sinon'),
     assert = require('chai').assert,
-    db = require('../../../../lib/Database'),
+    Sequelize = require('sequelize'),
     password = require('../../../../lib/util/password');
 
 describe('User Model', ()=> {
-    let User, originalSingleton;
+    let User, originalSingleton, db;
 
     /**
      * Setup:
      * Mock Database connector.
      **/
     before(()=> {
-        originalSingleton = db.singleton;
-        db.singleton.instance = require('../../../fixtures/mockSequelize');
-        User = require('../../../../models/db/User');
-
+        db = require('../../../fixtures/mockSequelize');
+        User = require('../../../../models/db/User')(db, Sequelize);
     });
 
     /**
@@ -28,7 +26,6 @@ describe('User Model', ()=> {
      * Restore everything.
      **/
     after(()=> {
-        db.singleton = originalSingleton;
     });
 
 
